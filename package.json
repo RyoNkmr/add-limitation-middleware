@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/RyoNkmr/add-limitation#readme",
   "dependencies": {
-    "express": "^4.14.0",
     "qs": "^6.3.0"
   }
 }
