@@ -17,9 +17,18 @@ module.exports = function(options) {
   }
 
   return function addLimitationMiddleware(req, res, next) {
-    var filter = qs.parse(req.query.filter);
-    filter.limit = filter.limit || limit;
-    req.query.filter = qs.stringify(filter);
-    next();
+    var filter = req.query.filter;
+    if(typeof filter !== 'undefined' && typeof filter != 'string') {
+      return next();
+    }
+
+    if(typeof filter === 'undefined') {
+      filter = {limit: limit};
+    } else {
+      filter = JSON.parse(filter);
+    }
+
+    req.query.filter = JSON.stringify(filter);
+    return next();
   };
 };
