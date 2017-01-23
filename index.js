@@ -1,5 +1,3 @@
-var qs = require('qs');
-
 /**
  * set array limitation for loopback application as middleware
  *
