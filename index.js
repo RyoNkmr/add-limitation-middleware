@@ -1,5 +1,4 @@
 var qs = require('qs');
-var bytes = require('bytes');
 
 /**
  * set array limitation for loopback application as middleware
@@ -11,17 +10,16 @@ var bytes = require('bytes');
 
 module.exports = function(options) {
   var opts = options || {};
-  var limit = bytes.parse(opts.limit);
+  var limit = opts.limit;
 
   if(limit == null) {
     limit = 100;
   }
 
   return function addLimitationMiddleware(req, res, next) {
-    var app = req.app;
-    app.set('query parser', function(value, option) {
-      return qs.parse(value, {arrayLimit: limit});
-    });
+    var filter = qs.parse(req.query.filter);
+    filter.limit = filter.limit || limit;
+    req.query.filter = qs.stringify(filter);
     next();
   };
 };

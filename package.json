@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/RyoNkmr/add-limitation-middleware#readme",
   "dependencies": {
-    "bytes": "^2.4.0",
     "qs": "^6.3.0"
   }
 }
