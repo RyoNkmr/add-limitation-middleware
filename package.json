@@ -1,7 +1,7 @@
 {
   "name": "add-limitation-middleware",
   "version": "0.0.1",
-  "description": "add limitation middleware",
+  "description": "a little usage loopback middleware, adding filter.limit query in requests",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/RyoNkmr/add-limitation-middleware/issues"
   },
-  "homepage": "https://github.com/RyoNkmr/add-limitation-middleware#readme",
-  "dependencies": {
-    "qs": "^6.3.0"
-  }
+  "homepage": "https://github.com/RyoNkmr/add-limitation-middleware#readme"
 }
