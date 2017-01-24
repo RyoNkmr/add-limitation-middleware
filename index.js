@@ -1,18 +1,13 @@
 /**
- * set array limitation for loopback application as middleware
+ * set limitation for loopback application as middleware
  *
- * @param {Object} [options]
+ * @param {number} [defaultLimit]
  * @return {Function} middleware
  * @public
  */
 
-module.exports = function(options) {
-  var opts = options || {};
-  var limit = opts.limit;
-
-  if(limit == null) {
-    limit = 100;
-  }
+module.exports = function(defaultLimit) {
+  var limit = defaultLimit || 100;
 
   return function addLimitationMiddleware(req, res, next) {
     var filter = req.query.filter;
