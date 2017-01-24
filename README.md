@@ -10,4 +10,5 @@ if no filter.limit is set in the request queries
 You can change {number}[defaultLimit](default: 100) for use when requests has no filter.limit value
 
 ## hoge
-default-params-middlewareとして作ろうか迷ったけど設定が面倒になりそうなのでやめた。
+~~default-params-middlewareとして作ろうか迷ったけど設定が面倒になりそうなのでやめた。~~ =>
+[結局作った](https://github.com/RyoNkmr/express-default-options-middleware)
